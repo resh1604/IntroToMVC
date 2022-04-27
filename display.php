@@ -1,13 +1,19 @@
+<?php
+require 'userdatabase.php';
+?>
+
 <!DOCTYPE html>
 <html>
-<body>
+    <title> Display user database </title>
+    <head> USER DATABASE </head>
 
-<?php
-require 'displaycode.php';
-$apple = new Fruit();
+    <body>
+        <?php
+            require 'displaycode.php';
+            $obj1 = new callMyDatabase();
 
-echo "<br>";
-?>
+            echo "<br>";
+        ?>
  
-</body>
+    </body>
 </html>
