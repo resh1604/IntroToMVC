@@ -1,5 +1,8 @@
 <?php
-include 'model/database.php';
+namespace project\control;
+
+use project\mod;
+
 
 class controller
 {
@@ -11,7 +14,7 @@ class controller
 
     public function __construct()
     {
-        $this->modelObject = new Database();
+        $this->modelObject = new mod\database();
     }
     public function invoke()
     {

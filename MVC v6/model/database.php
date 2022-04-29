@@ -1,4 +1,8 @@
 <?php
+namespace project\mod;
+
+require 'vendor/autoload.php';
+
 class database
 {
     public $user_display_query;
