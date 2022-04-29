@@ -4,6 +4,8 @@ include 'model/database.php';
 class controller
 {
     private $modelObject ;
+    public $deleteQueryCall;
+    public $showTableAfterDeletion;
 
     public function __construct()
     {
@@ -11,24 +13,21 @@ class controller
     }
     public function invoke()
     {
-        $returnedData = $this->modelObject->selectQueryWithRows("SELECT * FROM users");
-        include 'view/displayuserdata.php';
+        //select query
+        // $returnedData = $this->modelObject->selectQueryWithRows("SELECT * FROM users");
+        // include 'view/displayuserdata.php';
+        // die();
         
-        // echo "<pre>";
-        // print_r($returnedData);
-
-
-        // $data = $this->modelObject->selectQueryWithRows("SELECT * FROM users");
-        // echo "<pre>";
-        // print_r($data);
-        // exit;
-       // $this->modelObject->displayallusers();
-       // include 'view/displayuserdata.php';
-        //die();
+        //DELETE QUERY
+        echo "o";
+        $deleteQueryCall= $this->modelObject->DeleteQueryWithUserNo("DELETE FROM `users` WHERE name = 'pqr'");
+        $showTableAfterDeletion = $this->modelObject->selectQueryWithRows("SELECT * FROM users");
+        include 'view/displayuserdata.php';
+         
     }
    public function __destruct()
    {
-       echo "destructor called";
+        mysqli_close($this->modelObject->conn);
    }
 
 

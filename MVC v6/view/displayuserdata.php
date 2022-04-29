@@ -1,5 +1,7 @@
 <?php
-
+//SELECT QUERY
 echo "<pre>";
-print_r($returnedData);
+print_r($showTableAfterDeletion);
+
+
 ?>

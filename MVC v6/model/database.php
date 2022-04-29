@@ -46,4 +46,9 @@ class database
             return 0;
         }
     }
+    public function DeleteQueryWithUserNo($sqlQuery)
+    {
+        $sql = $sqlQuery;
+        mysqli_query($this->conn,$sql);
+    }
 }
