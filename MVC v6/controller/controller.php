@@ -6,6 +6,8 @@ class controller
     private $modelObject ;
     public $deleteQueryCall;
     public $showTableAfterDeletion;
+    public $insertQuery;
+    public $showTableAfterInsertion;
 
     public function __construct()
     {
@@ -13,17 +15,20 @@ class controller
     }
     public function invoke()
     {
-        //select query
-        // $returnedData = $this->modelObject->selectQueryWithRows("SELECT * FROM users");
-        // include 'view/displayuserdata.php';
-        // die();
-        
+        //SELECT QUERY FOR DISPLAYING ALL USERS
+        $returnedData = $this->modelObject->selectQueryWithRows("SELECT * FROM users");
+        include 'view/allusersdetails.php';
+        die();
+
         //DELETE QUERY
-        echo "o";
-        $deleteQueryCall= $this->modelObject->DeleteQueryWithUserNo("DELETE FROM `users` WHERE name = 'pqr'");
-        $showTableAfterDeletion = $this->modelObject->selectQueryWithRows("SELECT * FROM users");
-        include 'view/displayuserdata.php';
-         
+        // $deleteQueryCall= $this->modelObject->DeleteQueryWithUserNo("DELETE FROM `users` WHERE name = 'pqr'");
+        // $showTableAfterDeletion = $this->modelObject->selectQueryWithRows("SELECT * FROM users");
+        // include 'view/displayuserdata.php';
+
+        
+        // $insertQuery= $this->modelObject->DeleteQueryWithUserNo("INSERT into users VALUES ('6','stu','stu@stu','stu','6789012345')");
+        // $showTableAfterInsertion = $this->modelObject->selectQueryWithRows("SELECT * FROM users");
+        // include 'view/displayuserdata.php';
     }
    public function __destruct()
    {

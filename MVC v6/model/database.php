@@ -34,7 +34,7 @@ class database
             return [];
         }
     }
-    public function selectQueryWithRow($sqlQuery)
+    public function selectQueryWithRow($sqlQuery)  
     {
         $data = [];
         $sql  = $sqlQuery;
@@ -46,7 +46,16 @@ class database
             return 0;
         }
     }
-    public function DeleteQueryWithUserNo($sqlQuery)
+    public function DeleteQueryWithUserNo(string $sqlQuery) : bool
+    {
+        $sql = $sqlQuery;
+        if(mysqli_query($this->conn,$sql)){
+            return true;
+        }else {
+            return false;
+        }
+    }
+    public function InsertQuery($sqlQuery)
     {
         $sql = $sqlQuery;
         mysqli_query($this->conn,$sql);
