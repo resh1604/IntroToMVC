@@ -17,10 +17,19 @@ class controller
 
     public function __construct()
     {
+        // echo __DIR__;
+        // exit;
         $this->modelObject = new mod\database();
-        $this->loader = new \Twig\Loader\FilesystemLoader('view/templates');
+        $this->loader = new \Twig\Loader\FilesystemLoader(__DIR__ .'/../view/templates');
         $this->twig = new \Twig\Environment($this->loader);
     }
+
+    public function index(){
+        echo "Hello world";
+        echo "<br/>";
+        echo "<a href='view/htmlpages/user.php'>Users</a>";
+    }
+
     public function invoke()
     {
         //SELECT QUERY FOR DISPLAYING ALL USERS
@@ -30,7 +39,7 @@ class controller
         //include 'view/allusersdetails.php';
         
         //return $this->twig->render('testuser.html', ['my_array' => $returnedData]);
-        echo $this->twig->render('testuser.html', ['my_array' => $returnedData]);
+        echo $this->twig->render('testuser.html.twig', ['my_array' => $returnedData]);
 
         // echo $this->twig->render('testuser.html', array (
         //     'name' => 'dcjscjdsncsdnkc',

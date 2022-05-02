@@ -1,7 +1,7 @@
 <?php
 namespace project\mod;
 
-require 'vendor/autoload.php';
+
 
 class database
 {
