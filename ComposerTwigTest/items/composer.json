@@ -1,0 +1,18 @@
+{
+    "name": "r/r",
+    "authors": [
+        {
+            "name": "r"
+        }
+    ],
+    "require": {
+        "twig/twig": "^3.3",
+        "php": "^8.1"
+    },
+    "autoload" : {
+        "psr-4" : {
+            "reshu\\r\\" : "items/one",
+            "reshu\\s\\" : "items/two"
+        }
+    }
+}
