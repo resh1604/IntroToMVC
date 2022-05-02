@@ -3,6 +3,7 @@
 //Useful for bootstrap implementation
 include 'bootstrap/linksandsources.php'; 
 
+
 ?>
 
 <html>
@@ -33,7 +34,7 @@ include 'bootstrap/linksandsources.php';
         </div>
 
 
-
+{{name}}
 
     </body>
 </html>

@@ -1,0 +1,22 @@
+
+<div class="container my-3">
+    <table id="user_table" class="table table-striped container">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Contact</th>                    
+                </tr>
+            </thead>
+            <tbody> 
+                {% for data in my_array %}
+                <tr>
+                    <td>{{ data.name }}</td>
+                    <td>{{ data.email }}</td>
+                    <td>{{ data.contact }}</td>
+                </tr>
+                {% endfor %}
+
+            </tbody>
+    </table>
+</div>
